@@ -1,0 +1,93 @@
+.block {
+  border-radius: 2px;
+  width: 90px;
+  height: 90px;
+  box-shadow: 5px 0px 21px -18px inset, -5px 0px 21px -18px inset black;
+}
+
+@media only screen and (max-width: 600px) {
+  .block {
+    width: 69px;
+    height: 69px;
+  }
+}
+
+.new {
+  animation: appear 0.5s forwards;
+}
+
+.block:hover {
+  cursor: pointer;
+  box-shadow: 0px -1px 20px 2px inset;
+}
+
+.blue {
+  background: rgb(5, 23, 138);
+  background: linear-gradient(0deg, rgba(5, 23, 138, 1) 0%, rgba(35, 66, 200, 1) 10%, rgba(45, 167, 251, 1) 90%, rgba(171, 203, 255, 1) 100%);
+}
+
+.red {
+  background: rgb(88, 8, 12);
+  background: linear-gradient(0deg, rgba(88, 8, 12, 1) 0%, rgba(133, 12, 16, 1) 10%, rgba(194, 29, 38, 1) 90%, rgba(246, 69, 72, 1) 100%);
+}
+
+.yellow {
+  background: rgb(153, 153, 0);
+  background: linear-gradient(0deg, rgba(153, 153, 0, 1) 0%, rgba(179, 191, 0, 1) 10%, rgba(246, 255, 6, 1) 90%, rgba(253, 255, 156, 1) 100%);
+}
+
+.green {
+  background: rgb(20, 93, 23);
+  background: linear-gradient(0deg, rgba(20, 93, 23, 1) 0%, rgba(34, 138, 33, 1) 10%, rgba(64, 184, 55, 1) 90%, rgba(92, 236, 95, 1) 100%);
+}
+
+.purple {
+  background: rgb(107, 5, 138);
+  background: linear-gradient(0deg, rgba(107, 5, 138, 1) 0%, rgba(148, 35, 200, 1) 10%, rgba(203, 112, 255, 1) 90%, rgba(228, 208, 255, 1) 100%);
+}
+
+.disappearing {
+  background: white;
+  animation: disappear 1s forwards;
+}
+
+@media only screen and (max-width: 600px) {
+  @keyframes disappear {
+    50% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 0;
+      height: 69px;
+    }
+    100% {
+      opacity: 0;
+      height: 0;
+    }
+  }
+}
+
+@keyframes disappear {
+  50% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+    height: 90px;
+  }
+  100% {
+    opacity: 0;
+    height: 0;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
